@@ -41,6 +41,7 @@ t V eV
 # Misura di e/k tramite curva IV di un transistor
 ## Setup esperimento
 Realizzare il seguente circuito
+
 ![npn junction](figures_misc/npn.png)
 
 (dove il generatore a tensione costante ed il potenziometro sono sostituiti dal generatore di tensione variabile), Collegare l'amperometro (vista la grande stabilità del generatore non si userà un voltmetro ma si assumerà esatto il valore settato dal generatore)
