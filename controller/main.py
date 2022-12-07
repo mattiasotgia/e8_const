@@ -17,10 +17,7 @@ if __name__ == '__main__':
     s4 = serial.Serial('COM4', 9600)
     s5 = serial.Serial('COM5', 9600)
 
-    dmm.command(s4, 'ADC')
-    dmm.command(s5, 'VDC')
-    dmm.reset(s4)
-    dmm.reset(s5)
+    
 
     V_in = np.linspace(18,28,100)
     data = open('../dati/ph_diode.txt', 'w')
