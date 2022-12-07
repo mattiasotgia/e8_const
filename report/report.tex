@@ -1,5 +1,5 @@
-\documentclass[a4paper, nofootinbib]{revtex4-2}
-\usepackage[a4paper,top=1.05in, bottom=0.75in, left=0.75in, right=0.75in]{geometry}
+\documentclass[a4paper, varvw, nofootinbib]{revtex4-2}
+\usepackage[a4paper,top=1.05in, bottom=0.85in, left=0.85in, right=0.75in]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{microtype}
@@ -12,6 +12,9 @@
 \usepackage{siunitx}
 \usepackage[hidelinks]{hyperref}
 \usepackage{siunitx}
+\usepackage{newtxtext, newtxmath}
+
+\def\bibsection{\section*{\refname}}
 
 \makeatletter
 \renewcommand*{\thesection}{\arabic{section}}
@@ -31,20 +34,21 @@
 \date{\today}
 
 \begin{abstract}
-Presentiamo la misura dei valori della carica dell'elettrone $e$, della costante di Planck $h$ e della costante di Boltzmann $k$ come combinazione di quattro esperimenti separati ed indipendenti, mirati alla misura dei rapporti $e/h$, $e/k$ \cite{inmanMeasurementIntroductoryPhysics1973} e $h/k$, insieme all'esperimento proposto da Millikan \cite{millikanIsolationIonPrecision1911} per ottenere un valore della carica elementare $e$. Ci concentriamo sulla misura del rapporto $h/k$ realizzando lo stesso esperimento proposto in \cite{crandallMinimalApparatusDetermination1983}, sfruttando quindi la radiazione di corpo nero in una sua applicazione realizzabile in laboratorio.
+Presentiamo la misura dei valori della carica dell'elettrone $e$, della costante di Planck $h$ e della costante di Boltzmann $k$ come combinazione di quattro esperimenti separati ed indipendenti, mirati alla misura dei rapporti $e/h$, $e/k$ \cite{inmanMeasurementIntroductoryPhysics1973} e $h/k$, insieme all'esperimento proposto da Millikan \cite{millikanIsolationIonPrecision1911} per ottenere un valore della carica elementare $e$. Ci concentriamo sulla misura del rapporto $h/k$ realizzando lo stesso esperimento proposto in \cite{crandallMinimalApparatusDetermination1983}, sfruttando quindi la radiazione di corpo nero in una sua applicazione realizzabile in laboratorio. Combiniamo quindi i risultati in uno studio statistico ottenendo un valore preciso per le costanti $h$, $e$, $k$.
 \end{abstract}
 
 \maketitle
+\tableofcontents
 
 \section{Introduzione}
 
-Vogliamo ottenere una misura precisa del valore della carica dell'elettrone $e$, della costante di Planck $h$ e della costante di Boltzmann $k$. Per ottenere la misura di queste tre costanti ci concentriamo sulla realizzazione di quattro esperimenti, separati ed indipendenti. Non è facile infatti, eccetto per il caso della carica elementare, realizzare un singolo esperimento che permetta di misurare il valore di $h$, $k$ in modo diretto, ma sono invece realizzabili alcuni esperimenti che permettono di ottenere il valore dei rapporti a coppie di queste tre quantità \cite{inmanMeasurementIntroductoryPhysics1973, millikanIsolationIonPrecision1911, crandallMinimalApparatusDetermination1983}. Otterremo infatti la misura del rapporto $e/h$ studiando la curva di risposta del passaggio di corrente attraverso una giunzione $p-n$, come un \emph{LED}, rispetto alla tensione fornita in alimentazione. La misura di $e/k$ è invece ottenuta in modo simile, però studiando la risposta di un transistor ad un segnale di tensione in ingresso. Infine andiamo a studiare a partire dalla legge di Boltzman, sfruttando la legge della radiazione di corpo nero di Planck andiamo a calcolare il valore di $h/k$.
+Vogliamo ottenere una misura precisa del valore della carica dell'elettrone $e$, della costante di Planck $h$ e della costante di Boltzmann $k$. Per ottenere la misura di queste tre costanti ci concentriamo sulla realizzazione di quattro esperimenti, separati ed indipendenti. Non è facile infatti, eccetto per il caso della carica elementare, realizzare un singolo esperimento che permetta di misurare il valore di $h$, $k$ in modo diretto, ma sono invece realizzabili alcuni esperimenti che permettono di ottenere il valore dei rapporti a coppie di queste tre quantità \cite{inmanMeasurementIntroductoryPhysics1973, millikanIsolationIonPrecision1911, crandallMinimalApparatusDetermination1983}. Otterremo infatti la misura del rapporto $e/h$ studiando la curva di risposta del passaggio di corrente attraverso una giunzione \emph{p-n}, come un {LED}, rispetto alla tensione fornita in alimentazione. La misura di $e/k$ è invece ottenuta in modo simile, però studiando la risposta di un transistor ad un segnale di tensione in ingresso. Infine andiamo a studiare a partire dalla legge di Boltzman, sfruttando la legge della radiazione di corpo nero di Planck andiamo a calcolare il valore di $h/k$. 
 
 La trattazione descrive inizialmente, in sezione \ref{sec:theory}, gli aspetti teorici delle tre misurazioni che si effettuano, poi si affronta in modo più dettagliato in sezione \ref{sec:black_body_methods} il metodo sperimentale seguito per la misura del rapporto $h/k$ a partire dalla descrizione della radiazione di corpo nero fornita da Planck. Ai tre esperimenti realizzati in laboratorio sono poi aggiunti dati di misurazioni dell'esperimento di Millikan che permettono di ottenere una stima di $e$, la cui descrizione qualitativa e analisi dettagliata è fornita in sezione \ref{sec:millikan}. Dati quindi i quattro valori ottenuti possiamo ottenere una miglior stima delle costanti fisiche realizzando una analisi statistica, descritta in sezione \ref{sec:combined_data}. 
 
 \section{Teoria}\label{sec:theory}
 
-\subsection{Risposta in corrente di una giunzione $p-n$, misura di $e/k$}
+\subsection{Risposta in corrente di una giunzione \emph{p-n}, misura di $e/k$}
 
 \subsection{Risposta in tensione di un transistor, misura di $e/h$}
 
