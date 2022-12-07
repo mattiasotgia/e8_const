@@ -3,11 +3,11 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import time
 
-import numpy
+import numpy as np
 import dmm, ps
 
 
-if __name == '__main__':
+if __name__ == '__main__':
     
     i = ps.psinit('USB0::0x0AAD::0x0135::035375054::INSTR')
     ps.pssel(i, 2)
@@ -47,7 +47,7 @@ if __name == '__main__':
         v_fd = np.append(v_fd, Vfd)
         ev_fd = np.append(ev_fd, eVfd)
         i_lamp = np.append(i_lamp, I)
-        ei_lamp = np.appen(ei_lamp, eI)
+        ei_lamp = np.append(ei_lamp, eI)
 
         ax.errorbar(i_lamp, v_fd, xerr=ei_lamp, yerr=ev_fd, fmt='k.')
         plt.gcf().canvas.flush_events()
