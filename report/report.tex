@@ -56,6 +56,8 @@ Sappiamo che un elettrone eccitato, ad esempio grazie al passaggio di una corren
 
 \subsection{Risposta in tensione di un transistor, misura di $e/h$}
 
+Come i LED anche i transistor sfruttano giunzioni "p-n" di semiconduttori. Infatto quando si crea una giunzione si instaura una corrente $I=A\cdot exp(\frac{-eV_0}{kT})$ che però non si annulla solo se applica una tensione ulteriore $V$. La corrente totale diventa $I=A\cdot exp(\frac{e(V_0-V}{kT})-A\cdot exp(\frac{eV_0}{kT}) = A\cdot exp(\frac{-eV_0}{kT})\cdot(A\cdot exp(\frac{eV}{kT})-1) = I_0\cdot(exp(\frac{eV}{kT})-1)$. In realtà ci sono anche dei fattori di non idealità per cui l'equazione diventa \begin{equation}  I_0\cdot(exp(\frac{eV}{kT\eta})-1)\label{eq:I(eta)} \end{equation}. Però i transistor funzionano utilizzando due giunzioni nella sequenza n-p-n (emettitore, base e collettore) per cui, se emettitore e base sono tenuti allo stesso potenziale, la corrente che circola è descritta in modo abbastanza accurato da \ref{eq:I(eta)} con $\eta=1$. Se si conosce la temperatura $T$, misurando la corrente $I$ facendo variare la tensione è possibile fare un fit e ricavare il parametro $e/k$. Per la misura della temperatura si può usare una resistenza Pt100 della quale conosciamo l'andamento in funzione della temperatura. 
+
 \subsection{Radiazione di corpo nero}
 
 \section{Metodi}\label{sec:black_body_methods}
