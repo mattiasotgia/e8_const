@@ -48,17 +48,15 @@ La trattazione descrive inizialmente, in sezione \ref{sec:theory}, gli aspetti t
 
 \section{Teoria}\label{sec:theory}
 
+\paragraph*{Risposta in corrente di una giunzione \emph{p-n}, misura di $e/k$}
 
+È noto per le conclusioni tratte già da \cite{einsteinConcerningHeuristicPoint1965} e poi dai risultati della meccanica quantistica che una particella, carica elettronicamente, se colpita con sufficente energia $E$ produce un fotone di frequenza $\nu$ e una particella identica ma di energia inferiore. La relazione che si trova è data da $E=h\nu$, e la costante di proporzionalità è la costante di Planck. Non è però facile misurare in modo diretto il valore dell'energia per poter ricavare una stima immediata di tale costante. Esistono però alcune condizioni per cui 
 
-\subsection{Risposta in corrente di una giunzione \emph{p-n}, misura di $e/k$}
+\paragraph*{Risposta in tensione di un transistor, misura di $e/h$}
 
-È noto per le conclusioni tratte già da \cite{einsteinConcerningHeuristicPoint1965} e poi dai risultati della meccanica quantistica che una particella, carica elettronicamente, se colpita con sufficente energia $E$ produce un fotone di frequenza $\nu$ e una particella identica ma di energia inferiore. La relazione che si trova è data da $E=h\nu$, e la costante di proporzionalità è la costante di Planck. Non è però facile misurare in modo diretto il valore dell'energia per poter ricavare una stima immediata di tale costante. Si sa però che esistono alcune condizioni per cui 
+Come i LED anche i transistor sfruttano giunzioni di semiconduttori con drogaggio \emph{p-n}. Infatti quando si crea una giunzione si instaura una corrente $I=A\cdot \exp(\frac{-eV_0}{kT})$ che però non si annulla solo se applica una tensione ulteriore $V$. La corrente totale diventa $I=A\cdot exp(\frac{e(V_0-V}{kT})-A\cdot exp(\frac{eV_0}{kT}) = A\cdot exp(\frac{-eV_0}{kT})\cdot(A\cdot exp(\frac{eV}{kT})-1) = I_0\cdot(exp(\frac{eV}{kT})-1)$. In realtà ci sono anche dei fattori di non idealità per cui l'equazione diventa \begin{equation}  I_0\cdot(exp(\frac{eV}{kT\eta})-1)\label{eq:I(eta)} \end{equation}. Però i transistor funzionano utilizzando due giunzioni nella sequenza n-p-n (emettitore, base e collettore) per cui, se emettitore e base sono tenuti allo stesso potenziale, la corrente che circola è descritta in modo abbastanza accurato da \ref{eq:I(eta)} con $\eta=1$. Se si conosce la temperatura $T$, misurando la corrente $I$ facendo variare la tensione è possibile fare un fit e ricavare il parametro $e/k$. Per la misura della temperatura si può usare una resistenza Pt100 della quale conosciamo l'andamento in funzione della temperatura. 
 
-\subsection{Risposta in tensione di un transistor, misura di $e/h$}
-
-Come i LED anche i transistor sfruttano giunzioni "p-n" di semiconduttori. Infatto quando si crea una giunzione si instaura una corrente $I=A\cdot exp(\frac{-eV_0}{kT})$ che però non si annulla solo se applica una tensione ulteriore $V$. La corrente totale diventa $I=A\cdot exp(\frac{e(V_0-V}{kT})-A\cdot exp(\frac{eV_0}{kT}) = A\cdot exp(\frac{-eV_0}{kT})\cdot(A\cdot exp(\frac{eV}{kT})-1) = I_0\cdot(exp(\frac{eV}{kT})-1)$. In realtà ci sono anche dei fattori di non idealità per cui l'equazione diventa \begin{equation}  I_0\cdot(exp(\frac{eV}{kT\eta})-1)\label{eq:I(eta)} \end{equation}. Però i transistor funzionano utilizzando due giunzioni nella sequenza n-p-n (emettitore, base e collettore) per cui, se emettitore e base sono tenuti allo stesso potenziale, la corrente che circola è descritta in modo abbastanza accurato da \ref{eq:I(eta)} con $\eta=1$. Se si conosce la temperatura $T$, misurando la corrente $I$ facendo variare la tensione è possibile fare un fit e ricavare il parametro $e/k$. Per la misura della temperatura si può usare una resistenza Pt100 della quale conosciamo l'andamento in funzione della temperatura. 
-
-\subsection{Radiazione di corpo nero}
+\paragraph*{Radiazione di corpo nero}
 
 \section{Metodi}\label{sec:black_body_methods}
 
