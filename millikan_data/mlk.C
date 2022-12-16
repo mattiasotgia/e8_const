@@ -5,10 +5,11 @@ void mlk(){
     data->Draw("t >> h_mlk");
 
 
-    TF1 *f = new TF1("f", "[3]*TMath::Gaus(x, [0], [2]) + [4]*TMath::Gaus(x, [0]+[1], [2])+[5] * TMath::Gaus(x, [0]+2*[1], [2])", 0, 6.15);
-    f->SetParameters(2.,0.3,1.6);
-    f->FixParameter(3,1);
-    f->FixParameter(4,1);
-    f->FixParameter(5,1);
-    data->UnbinnedFit("f", "t");
+    TF1 *f = new TF1("f", "[2]*TMath::Gaus(x, [0], [1]) + [3]*TMath::Gaus(x, 2*[0], [1])+(1-[2]-[3])*TMath::Gaus(x, 3*[0], [1])");
+    f->SetParameters(1.6,0.3, 0.3, 0.3);
+    f->SetParLimits(0, 1.5, 1.7);
+    f->SetParLimits(1, 0, 0.5);
+    f->SetParLimits(2, 0, 1);
+    f->SetParLimits(3, 0, 1);
+    data->UnbinnedFit("f", "t", "t<5.8");
 }
