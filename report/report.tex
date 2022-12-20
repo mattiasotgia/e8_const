@@ -16,13 +16,6 @@
 
 \def\bibsection{\section*{\refname}}
 
-\makeatletter
-\renewcommand*{\thesection}{\arabic{section}}
-\renewcommand*{\thesubsection}{\thesection.\arabic{subsection}}
-\renewcommand*{\p@subsection}{}
-\renewcommand*{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
-\renewcommand*{\p@subsubsection}{}
-\makeatother
 
 \begin{document}
 \title{Misura precisa delle costanti fisiche $e$, $h$ ed $k$.}
@@ -31,42 +24,41 @@
 \author{Mattia Sotgia}
 \email{s4942225@studenti.unige.it}
 \affiliation{Dipartimento di Fisica, Università degli Studi di Genova, Genova, Italia}
-\date{\today}
+\date{7 dicembre 2022}
 
 \begin{abstract}
 Presentiamo la misura dei valori della carica dell'elettrone $e$, della costante di Planck $h$ e della costante di Boltzmann $k$ come combinazione di quattro esperimenti separati ed indipendenti, mirati alla misura dei rapporti $e/h$, $e/k$ \cite{inmanMeasurementIntroductoryPhysics1973} e $h/k$, insieme all'esperimento proposto da Millikan \cite{millikanIsolationIonPrecision1911} per ottenere un valore della carica elementare $e$. Ci concentriamo sulla misura del rapporto $h/k$ realizzando lo stesso esperimento proposto in \cite{crandallMinimalApparatusDetermination1983}, sfruttando quindi la radiazione di corpo nero in una sua applicazione realizzabile in laboratorio. Combiniamo quindi i risultati in uno studio statistico ottenendo un valore preciso per le costanti $h$, $e$, $k$.
 \end{abstract}
 
 \maketitle
-\tableofcontents
 
-\section{Introduzione}
+\subparagraph*{Introduzione} Vogliamo ottenere una misura precisa del valore della carica dell'elettrone $e$, della costante di Planck $h$ e della costante di Boltzmann $k$. Per ottenere la misura di queste tre costanti ci concentriamo sulla realizzazione di quattro esperimenti, separati ed indipendenti. Non è facile infatti, eccetto per il caso della carica elementare, realizzare un singolo esperimento che permetta di misurare il valore di $h$, $k$ in modo diretto, ma sono invece realizzabili alcuni esperimenti che permettono di ottenere il valore dei rapporti a coppie di queste tre quantità \cite{inmanMeasurementIntroductoryPhysics1973, millikanIsolationIonPrecision1911, crandallMinimalApparatusDetermination1983}. Otterremo infatti la misura del rapporto $e/h$ studiando la curva di risposta del passaggio di corrente attraverso una giunzione \emph{p-n}, come un {LED}, rispetto alla tensione fornita in alimentazione. La misura di $e/k$ è invece ottenuta in modo simile, però studiando la risposta di un transistor ad un segnale di tensione in ingresso. Infine a partire dalla legge di Boltzman, sfruttando la legge della radiazione di corpo nero di Planck andiamo a calcolare il valore di $h/k$. 
 
-Vogliamo ottenere una misura precisa del valore della carica dell'elettrone $e$, della costante di Planck $h$ e della costante di Boltzmann $k$. Per ottenere la misura di queste tre costanti ci concentriamo sulla realizzazione di quattro esperimenti, separati ed indipendenti. Non è facile infatti, eccetto per il caso della carica elementare, realizzare un singolo esperimento che permetta di misurare il valore di $h$, $k$ in modo diretto, ma sono invece realizzabili alcuni esperimenti che permettono di ottenere il valore dei rapporti a coppie di queste tre quantità \cite{inmanMeasurementIntroductoryPhysics1973, millikanIsolationIonPrecision1911, crandallMinimalApparatusDetermination1983}. Otterremo infatti la misura del rapporto $e/h$ studiando la curva di risposta del passaggio di corrente attraverso una giunzione \emph{p-n}, come un {LED}, rispetto alla tensione fornita in alimentazione. La misura di $e/k$ è invece ottenuta in modo simile, però studiando la risposta di un transistor ad un segnale di tensione in ingresso. Infine a partire dalla legge di Boltzman, sfruttando la legge della radiazione di corpo nero di Planck andiamo a calcolare il valore di $h/k$. 
+Ai tre esperimenti realizzati in laboratorio sono poi aggiunti dati di misurazioni dell'esperimento di Millikan che permettono di ottenere una stima di $e$. Dati quindi i quattro valori ottenuti possiamo ottenere una miglior stima delle costanti fisiche realizzando una analisi statistica.
 
-La trattazione descrive inizialmente, in sezione \ref{sec:theory}, gli aspetti teorici delle tre misurazioni che si effettuano, poi si affronta in modo più dettagliato in sezione \ref{sec:black_body_methods} il metodo sperimentale seguito per la misura del rapporto $h/k$ a partire dalla descrizione della radiazione di corpo nero fornita da Planck. Ai tre esperimenti realizzati in laboratorio sono poi aggiunti dati di misurazioni dell'esperimento di Millikan che permettono di ottenere una stima di $e$, la cui descrizione qualitativa e analisi dettagliata è fornita in sezione \ref{sec:millikan}. Dati quindi i quattro valori ottenuti possiamo ottenere una miglior stima delle costanti fisiche realizzando una analisi statistica, descritta in sezione \ref{sec:combined_data}. 
+\paragraph*{Risposta in corrente di una giunzione \emph{p-n}, misura di $e/k$}
 
-\section{Teoria}\label{sec:theory}
+È noto per le conclusioni tratte già da \cite{einsteinConcerningHeuristicPoint1965} e poi dai risultati della meccanica quantistica che una particella, carica elettronicamente, se colpita con sufficente energia $E$ produce un fotone di frequenza $\nu$ e una particella identica ma di energia inferiore. La relazione che si trova è data da $E=h\nu$, e la costante di proporzionalità è la costante di Planck. Non è però facile misurare in modo diretto il valore dell'energia per poter ricavare una stima immediata di tale costante. In un diodo, ovvero un elemento circuitale costituito da due giunzioni semiconduttrici drogate in modo diverso, avremo che il passaggio di corrente avviene quando gli elettroni della giunzione $n$ sono spinti a uscire dalle loro orbite stabili e andare a rimediare alla mancanza di cariche negative della giunzione $p$. Quando questo passaggio avviene gli elettroni rilasciano energia, in forma quantizzata, come fotoni di luce. Nei led il drogaggio \emph{p-n} è tale per cui l'energia rilasciata $E$ sia tale per avere una frequenza $\nu$ nel visibile. L'energia che viene rilasciata è pari al lavoro che viene compiuto per spostare gli elettroni, che in termini della tensione si traduce in un lavoro $\mathcal W = e V_\text{diode}$, che permette di stabilire una relazione lineare $h\nu = eV_\text{diode}$ per cui trovato il valore di tensione per cui si attiva il LED, si può ottenere una stima di $e/h$.
+
+\paragraph*{Risposta in tensione di un transistor, misura di $e/h$}
+
+Come i LED anche i transistor sfruttano giunzioni \emph{p-n} di semiconduttori. Quando per una giunzione \emph{p-n} si crea, la corrente che si instaura è esponenzialmente proporzionale alla tensione, $I=A\exp(-eV_0/kT)$, con un coefficente che permette di trovare una stima di $e/k$. Però la relazione in condizioni reali deve essere corretta, dotandosi di un coefficente $\eta$ che varia per ogni diodo. Stabilità maggiore è però ottenuta considerando una giunzione tripla \emph{n-p-n}, quando la prima e l'ultima giunzione, emettitore e collettore, sono tenuti allo stesso potenziale. In questo caso la corrente elettrica è descritta come \begin{equation} I = I_0 \qty(\exp(\frac{eV_{t}}{kT}) - 1). \end{equation}
+
+\paragraph*{Radiazione di corpo nero} Per un corpo nero è valida la relazione trovata da Planck per cui l'intensità di radiazione emessa ha una dipendenza dalla temperatura descritta dalla relazione \begin{equation} \mathcal I(\nu, T) = \frac{8 \pi h \nu^3}{c^2}\qty(\exp(\frac{h\nu}{kT})-1)^{-1}.  \end{equation} Selezionando una sola frequenza di radiazione $\nu$, allora avremo che dividendo membro a membro otteniamo una relazione più agevole, e siccome per frequenze ottiche ($\SI{350}{\nano\metre} < \nu <\SI{700}{\nano\metre}$) abbiamo che $h\nu \ll kT$, ovvero che l'esponenziale si sviluppa intorno allo zero, potendo semplificare la relazione precedente. Avremo che allora la relazione semplifica come \begin{equation} \log(\frac{\mathcal I_j}{\mathcal I_i}) = \frac{h\nu}{k}\qty({1\over T_i} - {1\over T_j}),~\text{ dove $h/k$ è considerato parametro di fit.} \label{eq:3}\end{equation}
+
+In una prima approssimazione una lampadina alogena può essere considerata essere un esempio di corpo nero, per cui il bilancio di potenza fornisce $P_\text{abs} + P_e = P_\text{em} + P_\text{cond}$, dove $P_\text{amb} = AT_\text{amb}^4$ è la potenza assorbita dall'ambiente, che consideriamo trascurabile, come anche $P_\text{cond}$ che èe legata alla condizione elettrica. 
+Vogliamo ora osservare eventuale dipendenza della temperatura di emissione dalla temperatura ambiente per il setup considerato. Da prima avremo che $P = AT^4$.  Allora assumendo una dipendenza della temperatura dalla resistenza come $T = \beta R^\gamma$, possiamo anche ottenere una dipendenza della dispersione in ambiente, per cui $P_\text{amb} = AT_\text{amb}^4 = \beta A R^{4\gamma}_\text{amb}$, e per la potenza emessa dal corpo nero, per cui $P = AT^4 = \beta A R^{4\gamma}$. Dividendo membro a membro avremo allora la dipendenza della temperatura dalla temperatura ambiente, e sostituendo per la potenza emessa avremo allora \begin{equation} P = VI =  A \qty[\qty(\frac{V}{IR_\text{amb}})^\gamma T_\text{amb}]^4.\label{eq:4} \end{equation} 
+
+\subparagraph*{Metodi}\label{sec:black_body_methods} Il setup sperimentale piuttosto semplificato prevede una lampada alogena che emette radiazione non polarizzata su uno spettro ambpio. Di questo spettro si considera un taglio preciso con un filtro ottico che permette di avere $\nu = \SI{6.66(6)e+5}{\giga\hertz}$, dovuta ad una lunghezza d'onda $\lambda \simeq \SI{450}{\nano\metre}$. L'intensità luminosa viene poi quantificata utilizzando un fotodiodo per il quale $V_\text{fd} \propto \mathcal I_\text{fd}$, per cui la relazione \eqref{eq:3} allora si ottiene nella forma \begin{equation} \log(\frac{V^\text{fd}_j}{V^\text{fd}_i}) = \frac{h\nu}{k}\qty({1\over T_i} - {1\over T_j}). \end{equation}
+
+\paragraph*{Misura della dipendenza da $\gamma$ per la temperatura} Caratterizziamo l'apparato sulla base della relazione \eqref{eq:4}, ovvero otteniamo un valore di $\gamma$ per cui la relazione è valida. Ipotizzando la temperatura ambiente costante, avremo che a meno di costanti la relazione \eqref{eq:4} ci permette di avere una stima di $\gamma$. Troviamo allora che \[\gamma = \num{0.87769(24)}.\]
+
+\paragraph*{}
 
 
+\subparagraph*{Determinazione indipendente della carica elementare}\label{sec:millikan} 
 
-\subsection{Risposta in corrente di una giunzione \emph{p-n}, misura di $e/k$}
-
-È noto per le conclusioni tratte già da \cite{einsteinConcerningHeuristicPoint1965} e poi dai risultati della meccanica quantistica che una particella, carica elettronicamente, se colpita con sufficente energia $E$ produce un fotone di frequenza $\nu$ e una particella identica ma di energia inferiore. La relazione che si trova è data da $E=h\nu$, e la costante di proporzionalità è la costante di Planck. Non è però facile misurare in modo diretto il valore dell'energia per poter ricavare una stima immediata di tale costante. Si sa però che esistono alcune condizioni per cui 
-
-\subsection{Risposta in tensione di un transistor, misura di $e/h$}
-
-Come i LED anche i transistor sfruttano giunzioni "p-n" di semiconduttori. Infatto quando si crea una giunzione si instaura una corrente $I=A\cdot exp(\frac{-eV_0}{kT})$ che però non si annulla solo se applica una tensione ulteriore $V$. La corrente totale diventa $I=A\cdot exp(\frac{e(V_0-V}{kT})-A\cdot exp(\frac{eV_0}{kT}) = A\cdot exp(\frac{-eV_0}{kT})\cdot(A\cdot exp(\frac{eV}{kT})-1) = I_0\cdot(exp(\frac{eV}{kT})-1)$. In realtà ci sono anche dei fattori di non idealità per cui l'equazione diventa \begin{equation}  I_0\cdot(exp(\frac{eV}{kT\eta})-1)\label{eq:I(eta)} \end{equation}. Però i transistor funzionano utilizzando due giunzioni nella sequenza n-p-n (emettitore, base e collettore) per cui, se emettitore e base sono tenuti allo stesso potenziale, la corrente che circola è descritta in modo abbastanza accurato da \ref{eq:I(eta)} con $\eta=1$. Se si conosce la temperatura $T$, misurando la corrente $I$ facendo variare la tensione è possibile fare un fit e ricavare il parametro $e/k$. Per la misura della temperatura si può usare una resistenza Pt100 della quale conosciamo l'andamento in funzione della temperatura. 
-
-\subsection{Radiazione di corpo nero}
-
-\section{Metodi}\label{sec:black_body_methods}
-
-\subsection{Misura della dipendenza da $\gamma$}
-
-\section{Determinazione indipendente della carica elementare}\label{sec:millikan}
-
-\section{Calcolo delle costanti $e$, $h$, $k$ e conclusioni}\label{sec:combined_data}
+\subparagraph*{Calcolo delle costanti $e$, $h$, $k$ e conclusioni}\label{sec:combined_data}
 
 \bibliography{ref/ref1}
 
