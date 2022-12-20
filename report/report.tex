@@ -1,25 +1,19 @@
 \documentclass[a4paper, varvw, nofootinbib]{revtex4-2}
 \usepackage[a4paper,top=1.05in, bottom=0.85in, left=0.85in, right=0.75in]{geometry}
+\usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{microtype}
-\usepackage[italian]{babel}
+\usepackage{newtx}
 \makeatletter
 \let\it@comma@def\active@comma
 \makeatother
 \usepackage{physics}
+\usepackage[round-mode = uncertainty]{siunitx}
 \usepackage{graphicx}
-\usepackage{siunitx}
 \usepackage[hidelinks]{hyperref}
-\usepackage{siunitx}
-\sisetup{
-    round-mode = uncertainty
-}
-
-\usepackage{newtx}
 
 \def\bibsection{\section*{\refname}}
-
 
 \begin{document}
 \title{Determinazione della carica elementare, della costante di Plank e della costante di Boltzmann}
@@ -58,7 +52,7 @@ Vogliamo ora osservare eventuale dipendenza della temperatura di emissione dalla
 \begin{figure}
     \centering
     \includegraphics[width=14cm]{fig/plot_hk}
-    \caption{\textbf{a.} Considerati coppie di punti in tensione e corrente, possiamo caratterizzare il circuito della sorgente e la sua risposta in termini di temperatura, ovvero ottenere il valore di $\gamma$. \textbf{b.} I dati raccolti e trasformati socondo la relazione \eqref{eq:5} cono fittati su un set di dati considerato $j=0$.}
+    \caption{\textbf{a.} Considerati coppie di punti in tensione e corrente, possiamo caratterizzare il circuito della sorgente e la sua risposta in termini di temperatura, ovvero ottenere il valore di $\gamma$. \textbf{b.} I dati raccolti e trasformati secondo la relazione \eqref{eq:5} cono fittati su un set di dati considerato $j=0$.}
 \end{figure}
 
 \paragraph*{Misura della dipendenza da $\gamma$ per la temperatura} Caratterizziamo l'apparato sulla base della relazione \eqref{eq:4}, ovvero otteniamo un valore di $\gamma$ per cui la relazione è valida. Ipotizzando la temperatura ambiente costante, avremo che a meno di costanti la relazione \eqref{eq:4} ci permette di avere una stima di $\gamma$. Troviamo allora che \[\gamma = \num{0.87769(24)}.\] Noto quindi il valore di $\gamma$ è possibile determinare la temperatura della sorgente in dipendenza dalla tensione fornita e alla corrente che circola sul circuito. La temperatura risulterà essere allora una funzione $T_j = T_j(V_j, I_j, \gamma)$, oltre che dipendente dalla temperatura ambiente $T_\text{amb}$, misurata indipendentemente durante la presa dati, $T_\text{amb} = \SI{299.7 +- 0.7}{\kelvin}$, e dall'impedenza a temperatura ambiente $R_\text{amb} = \SI{25.045 +- 0.215}{\ohm}$ misurata a priori della presa dati. Osserviamo dunque che quindi i diversi valori di temperatura $T_j$ risulteranno essere tra loro correlati. 
@@ -69,10 +63,10 @@ Inoltre, dopo aver appurato che il metodo e il risultato non dipendano da tale s
 \begin{figure}
 \centering
 \includegraphics[width=14cm]{fig/millikan}
-\caption{}
+\caption{Minimizzazione della Eq. \eqref{eq:6} con \emph{maximum Likelihood (MLE)} per ottenere una stima dei parametri della distribuzione di probabilità $f_\text{Mlk}$. Il parametro principale che interessa ottenere è però il valore di separazione tra i centri delle distribuzioni gaussiane, che corrisponde alla carica dell'elettrone $e$.}
 \end{figure}
 
-\subparagraph*{Determinazione indipendente della carica elementare}\label{sec:millikan} Utilizzando un set di dati dall'esperimento di Millikan vogliamo ottenere una stima indipendente della carica elementare $e$. L'esperimento ci permette di avere il valore della carica elementare sfruttando proprio il fenomeno della quantizzazione. Infatti una differenza di potenziale si pone in equilibrio con la forza gravitazionale, permettendo di conoscere la carica depositata su gocce d'olio. Queste si posizioneranno a distanza proporzionale alla carica elementare. I dati raccolti ssaranno adattabili a più gaussiane, separate ciascuna da un delta $\propto e$. La forma della distribuzione di propabilità sarà quindi trovata come \begin{equation} f_\text{PDF} =  A_0 \frac{1}{\sqrt{2\pi\sigma^2}}\exp({-\frac{e}{2\sigma^2}}) +  A_1 \frac{1}{\sqrt{2\pi\sigma^2}}\exp({-\frac{2e}{2\sigma^2}}) + (1-A_0-A_1) \frac{1}{\sqrt{2\pi\sigma^2}}\exp({-\frac{3e}{2\sigma^2}}), \end{equation} dove i fattori $A_0$, $A_1$ e $1-A_0-A_1$ sono necessari per rendere di norma unitaria la distribuzione. Eseguendo una massimizzazione binnata della Likelihood (minimizziamo $-\log \mathcal L(f_\text{PDF})$) otteniamo allora la stima della carica elementare \[e = \SI{1.608(20)e-19}{\coulomb}.\] 
+\subparagraph*{Determinazione indipendente della carica elementare}\label{sec:millikan} Utilizzando un set di dati dall'esperimento di Millikan vogliamo ottenere una stima indipendente della carica elementare $e$. L'esperimento ci permette di avere il valore della carica elementare sfruttando proprio il fenomeno della quantizzazione. Infatti una differenza di potenziale si pone in equilibrio con la forza gravitazionale, permettendo di conoscere la carica depositata su gocce d'olio. Queste si posizioneranno a distanza proporzionale alla carica elementare. I dati raccolti saranno adattabili a più gaussiane, separate ciascuna da un delta $\propto e$. La forma della distribuzione di probabilità sarà quindi trovata come \begin{equation} f_\text{Mlk} =  A_0 \frac{1}{\sqrt{2\pi\sigma^2}}\exp({-\frac{e}{2\sigma^2}}) +  A_1 \frac{1}{\sqrt{2\pi\sigma^2}}\exp({-\frac{2e}{2\sigma^2}}) + (1-A_0-A_1) \frac{1}{\sqrt{2\pi\sigma^2}}\exp({-\frac{3e}{2\sigma^2}}), \label{eq:6}\end{equation} dove i fattori $A_0$, $A_1$ e $1-A_0-A_1$ sono necessari per rendere di norma unitaria la distribuzione. Eseguendo una massimizzazione \emph{binned} della Likelihood (minimizziamo $-\log \mathcal L(f_\text{Mlk})$) otteniamo allora la stima della carica elementare \[e = \SI{1.608(20)e-19}{\coulomb}.\] 
 
 \subparagraph*{Calcolo delle costanti $e$, $h$, $k$ e conclusioni}\label{sec:combined_data} 
 
