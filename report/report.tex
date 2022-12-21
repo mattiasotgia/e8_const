@@ -52,7 +52,7 @@ Vogliamo ora osservare eventuale dipendenza della temperatura di emissione dalla
 \begin{figure}
     \centering
     \includegraphics[width=14cm]{fig/plot_hk}
-    \caption{\textbf{a.} Considerati coppie di punti in tensione e corrente, possiamo caratterizzare il circuito della sorgente e la sua risposta in termini di temperatura, ovvero ottenere il valore di $\gamma$. \textbf{b.} I dati raccolti e trasformati secondo la relazione \eqref{eq:5} cono fittati su un set di dati considerato $j=0$.}
+    \caption{\textbf{a.} Considerati coppie di punti in tensione e corrente, possiamo caratterizzare il circuito della sorgente e la sua risposta in termini di temperatura, ovvero ottenere il valore di $\gamma$. \textbf{b.} I dati raccolti e trasformati secondo la relazione \eqref{eq:5} sono fittati su un set di dati considerato $j=0$.}
 \end{figure}
 
 \paragraph*{Misura della dipendenza da $\gamma$ per la temperatura} Caratterizziamo l'apparato sulla base della relazione \eqref{eq:4}, ovvero otteniamo un valore di $\gamma$ per cui la relazione è valida. Ipotizzando la temperatura ambiente costante, avremo che a meno di costanti la relazione \eqref{eq:4} ci permette di avere una stima di $\gamma$. Troviamo allora che \[\gamma = \num{0.87769(24)}.\] Noto quindi il valore di $\gamma$ è possibile determinare la temperatura della sorgente in dipendenza dalla tensione fornita e alla corrente che circola sul circuito. La temperatura risulterà essere allora una funzione $T_j = T_j(V_j, I_j, \gamma)$, oltre che dipendente dalla temperatura ambiente $T_\text{amb}$, misurata indipendentemente durante la presa dati, $T_\text{amb} = \SI{299.7 +- 0.7}{\kelvin}$, e dall'impedenza a temperatura ambiente $R_\text{amb} = \SI{25.045 +- 0.215}{\ohm}$ misurata a priori della presa dati. Osserviamo dunque che quindi i diversi valori di temperatura $T_j$ risulteranno essere tra loro correlati. 
@@ -63,12 +63,48 @@ Inoltre, dopo aver appurato che il metodo e il risultato non dipendano da tale s
 \begin{figure}
 \centering
 \includegraphics[width=14cm]{fig/millikan}
-\caption{Minimizzazione della Eq. \eqref{eq:6} con \emph{maximum Likelihood (MLE)} per ottenere una stima dei parametri della distribuzione di probabilità $f_\text{Mlk}$. Il parametro principale che interessa ottenere è però il valore di separazione tra i centri delle distribuzioni gaussiane, che corrisponde alla carica dell'elettrone $e$.}
+\caption{Minimizzazione della Eq. \eqref{eq:6} con \emph{maximum Likelihood (MLE)} per ottenere una stima dei parametri della distribuzione di probabilità $f_\text{Mlk}$. Il parametro principale che interessa ottenere è però il valore di separazione tra i centri delle distribuzioni gaussiane, che corrisponde alla carica dell'elettrone $e$.}\label{fig:millikan}
 \end{figure}
 
-\subparagraph*{Determinazione indipendente della carica elementare}\label{sec:millikan} Utilizzando un set di dati dall'esperimento di Millikan vogliamo ottenere una stima indipendente della carica elementare $e$. L'esperimento ci permette di avere il valore della carica elementare sfruttando proprio il fenomeno della quantizzazione. Infatti una differenza di potenziale si pone in equilibrio con la forza gravitazionale, permettendo di conoscere la carica depositata su gocce d'olio. Queste si posizioneranno a distanza proporzionale alla carica elementare. I dati raccolti saranno adattabili a più gaussiane, separate ciascuna da un delta $\propto e$. La forma della distribuzione di probabilità sarà quindi trovata come \begin{equation} f_\text{Mlk} =  A_0 \frac{1}{\sqrt{2\pi\sigma^2}}\exp({-\frac{e}{2\sigma^2}}) +  A_1 \frac{1}{\sqrt{2\pi\sigma^2}}\exp({-\frac{2e}{2\sigma^2}}) + (1-A_0-A_1) \frac{1}{\sqrt{2\pi\sigma^2}}\exp({-\frac{3e}{2\sigma^2}}), \label{eq:6}\end{equation} dove i fattori $A_0$, $A_1$ e $1-A_0-A_1$ sono necessari per rendere di norma unitaria la distribuzione. Eseguendo una massimizzazione \emph{binned} della Likelihood (minimizziamo $-\log \mathcal L(f_\text{Mlk})$) otteniamo allora la stima della carica elementare \[e = \SI{1.608(20)e-19}{\coulomb}.\] 
+\subparagraph*{Determinazione indipendente della carica elementare}\label{sec:millikan} Utilizzando un set di dati dall'esperimento di Millikan vogliamo ottenere una stima indipendente della carica elementare $e$. L'esperimento ci permette di avere il valore della carica elementare sfruttando proprio il fenomeno della quantizzazione. Infatti una differenza di potenziale si pone in equilibrio con la forza gravitazionale, permettendo di conoscere la carica depositata su gocce d'olio. Queste si posizioneranno a distanza proporzionale alla carica elementare. I dati raccolti saranno adattabili a più gaussiane, separate ciascuna da un delta $\propto e$. La forma della distribuzione di probabilità sarà quindi trovata come \begin{equation} f_\text{Mlk} =  A_0 \frac{1}{\sqrt{2\pi\sigma^2}}\exp({-\frac{e}{2\sigma^2}}) +  A_1 \frac{1}{\sqrt{2\pi\sigma^2}}\exp({-\frac{2e}{2\sigma^2}}) + (1-A_0-A_1) \frac{1}{\sqrt{2\pi\sigma^2}}\exp({-\frac{3e}{2\sigma^2}}), \label{eq:6}\end{equation} dove i fattori $A_0$, $A_1$ e $1-A_0-A_1$ sono necessari per rendere di norma unitaria la distribuzione. Eseguendo una massimizzazione \emph{binned} della Likelihood (minimizziamo $-\log \mathcal L(f_\text{Mlk})$) otteniamo allora la stima della carica elementare \[e(\text{Mlk}) = \SI{1.608(20)e-19}{\coulomb}.\] Come possiamo anche osservare in fig. \ref{fig:millikan} i tre picchi gaussiani sono limitati ad una regione per cui la carica in unità elementari è $<\SI{5.8}{\elementarycharge}$. Dopo questo valore abbiamo che i singoli picchi gaussiani non sono distinguibili, e che comunque i dati sono compatibili con lo zero. La minimizzazione è quindi eseguita imponendo un limite superiore per la carica \SI{5.8}{\elementarycharge}.
 
-\subparagraph*{Calcolo delle costanti $e$, $h$, $k$ e conclusioni}\label{sec:combined_data} 
+\begin{table}
+    \caption{Riportiamo il risultato degli esperimenti realizzati per misurare le costanti $e$, $h$, $k$.}\label{tab:results_indip}
+    \begin{ruledtabular}
+        \begin{tabular}{lrr}
+            Quantità & Valore sperimentale & Valore Teorico\\\colrule
+            Carica elementare da esperimento di Millikan ($\times\SI{e-19}{\coulomb}$) & \num{1.608 +- 0.020}&\num{1.602176634}\\
+            Costante di Planck su costante di Boltzmann $h/k$ ($\times\SI{e-11}{\kelvin\second}$) & \num{3.27 +- 0.04} & $\num{6.62607015}/\num{1.380649}\simeq\num{4.799}$\\
+            Carica elementare su costante di Boltzmann $e/k$ ($\times\SI{e4}{\coulomb\kelvin\per\joule}$) & \num{1.1440 +- 0.0040} & $\num{1.602176634}/\num{1.380649}\simeq\num{1.1605}$\\
+            Carica elementare su costante di Plank\footnote{Il valore considerato è una scelta arbitraria tra due possibili valori, entrambi riportati, non si riportano i calcoli per l'altro valore. Si sceglie il valore $h/k = \SI{0.252 +- 0.010 e15}{\coulomb\per\joule\second}$.} $e/h$ ($\times\SI{e15}{\coulomb\per\joule\second}$) & \num{0.252 +- 0.010} & $\num{1.602176634} / \num{6.62607015} \simeq \num{0.242}$\\
+            & \num{0.201 +- 0.006} & $\num{1.602176634} / \num{6.62607015} \simeq \num{0.242}$
+        \end{tabular}
+    \end{ruledtabular}
+\end{table}
+
+\subparagraph*{Calcolo delle costanti $e$, $h$, $k$ e conclusioni}\label{sec:combined_data} Abbiamo un set di dati costituito da risultati indipendenti, come riportati in tabella \ref{tab:results_indip}. Volendo stimare i valori delle costanti dai dati che abbiamo considerato, allora possiamo pensare di minimizzare il valore del $\chi^2$ costruito come \begin{equation} 
+    \chi^2_{e,h,k} = 
+    \qty(\frac{\mu_e(\text{Mlk}) - e_\text{exp}}{\sigma_e(\text{Mlk})})^2 + 
+    \qty(\frac{\mu_{h/k} - h_\text{exp}/k_\text{exp}}{\sigma_{h/k}})^2 + 
+    \qty(\frac{\mu_{e/k} - e_\text{exp}/k_\text{exp}}{\sigma_{e/k}})^2 + 
+    \qty(\frac{\mu_{e/h} - e_\text{exp}/h_\text{exp}}{\sigma_{e/h}})^2, \label{eq:chi2_ehk}
+\end{equation} sui parametri $e_\text{exp}$, $h_\text{exp}$ e $k_\text{exp}$.
+
+In questo modo, accertato che le misure sono indipendenti e che quindi la stima della deviazione standard sul risultato del fit è corretta, otteniamo, al $68\%$ di probabilità dei valori delle costanti come \[
+    \begin{aligned}
+        e_\text{exp} &= \SI{1.608 +- 0.020 e-19}{\coulomb}\text{, compatibile con la teoria al $68\%$},\\
+        h_\text{exp} &= \SI{4.80 +- 0.08 e-34}{\metre\squared\kilo\gram\per\second}\text{, non compatibile alla teoria neanche al 99.7\%},\\
+        k_\text{exp} &= \SI{1.410 +- 0.018 e-23}{\metre\squared\kilo\gram\per\second\squared\kelvin}\text{, non compatibile con la teoria.}.
+    \end{aligned}
+\] Per il valore di $k_\text{exp}$ in particolare osserviamo che però probabilmente la compatibilità è entro $4$-$5\sigma$. 
+
+\begin{figure}
+\centering
+\includegraphics[width=15cm]{fig/ehk_contour_plot_68}
+\caption{Intervalli di probabilità del 68\% ($\sigma$), del 95\% ($2\sigma$) e 99.7\% ($3\sigma$) ottenuti dalle curve di livello del $\chi^2_{e,h,k}$ in \eqref{eq:chi2_ehk}. Gli intervalli per distribuzioni bidimensionali sono ottenute considerando una curva per cui una deviazione standard corrisponde ad un taglio del $\chi^2_{e,h,k}$ a $+2.3$ rispetto al minimo, due deviazioni standard corrispondono a $+6.17$ dal minimo e tre deviazioni standard a $+11.8$ dal minimo. Le linee tratteggiate indicano i valori stimati sperimentalmente $e_\text{exp}$, $h_\text{exp}$ e $k_\text{exp}$, mentre con il simbolo $\star$ e con le linee continue rosse sono indicati i valori teorici.}\label{fig:3}
+\end{figure}
+
+
 
 \bibliography{ref/ref1}
 
